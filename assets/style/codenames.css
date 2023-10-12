@@ -1,0 +1,99 @@
+/* Background image, adds font and some styling */
+body {
+  background-color: brown;
+  background-attachment: fixed;
+  padding: 15px;
+  font-family: 'NotoSansChakma-Regular';
+  font-weight: bold;
+  text-transform: uppercase
+}
+
+/* Make the 6 by 4 grid */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* for some reason using repeat(5 1fr) didn't work.*/
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+}
+
+/* Styling the cards structure */
+.cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #ffebd1;
+  width: 15vw;
+  height: 15vh;
+  border-radius: 6px;
+  border: 3px #99713d solid;
+  box-shadow: 0 0 0 15px #ffebd1;
+  padding: 10px;
+  gap: 5px;
+  color: rgb(18, 17, 17);
+  overflow: hidden;
+}
+
+/*Character picture has opacity 0 until hovered, then it becomes visible. */
+.back {
+  max-width: 100%;
+  position: absolute;
+  align-self: center;
+  opacity: 0;
+  z-index: 1;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+
+.pfp {
+  max-width: 4vw;
+  justify-self: end;
+
+}
+
+
+.flip {
+  transform: scale(-1, -1);
+  flex-direction: column;
+  text-align: center;
+  color: #99713d;
+
+}
+
+/* horizontal line dividing the name */
+hr {
+  width: 10vw;
+  margin: 0px;
+  border: none;
+  background-color: #99713d;
+  height: 2.5px;
+}
+
+.forward {
+  /* white box */
+  display: flex;
+  font-weight: bold;
+  font-size: x-large;
+  background-color: white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  grid-area: 2 / 1 / 3 / 3;
+  /* As the short-shorthand for grid-row-start + grid-column-start + grid-row-end + grid-column-end: */
+  height: 90%;
+  margin: 0px;
+  align-self: end;
+  /* text itself */
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'NotoSansChakma-Regular';
+  src: url(/assets/fonts/NotoSansChakma-Regular.woff) format('woff');
+  src: url(/assets/fonts/NotoSansChakma-Regular.woff2) format('woff2');
+}
